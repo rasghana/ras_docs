@@ -1,0 +1,9 @@
+site_name: Ras api documentation
+pages:
+    - Home: index.md
+    - Account: account_registration.md
+    - User_Registration: user_registration.md
+    - Event: events.md
+    - Event_registry: event_registry.md
+    - News: news.md
+theme: readthedocs
