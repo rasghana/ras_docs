@@ -1,5 +1,5 @@
 ### Register for one event
-`Endpoint: GET http://localhost:8000/api/v1/events/register-for-event/`
+`Endpoint: GET http://localhost:8000/api/v1/events/{pk}/register-for-event/`
 
   ``Response: 201 Created``
 
@@ -24,7 +24,7 @@
 
 
 ### Get only events i have registered for
-`Endpoint: GET http://localhost:8000/api/v1/event/my-events/`
+`Endpoint: GET http://localhost:8000/api/v1/events/my-events/`
 
   ``Response: 200 ok``
 
