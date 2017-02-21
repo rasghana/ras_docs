@@ -1,5 +1,5 @@
 ## Get all events
-`Endpoint: GET http://localhost:8000/api/v1/events/`
+`Endpoint: GET https://api.example.org/api/v1/events/`
 
   ``Response: 200 ok``
 

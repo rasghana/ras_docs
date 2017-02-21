@@ -1,5 +1,5 @@
 ### Account signup
-`Endpoint: POST http://localhost:8000/api/v1/users/signup/`
+`Endpoint: POST https://api.example.org/api/v1/users/signup/`
   
   ``Request: [JSON Body]``
 
@@ -17,7 +17,7 @@
 
 
 ### Account login
-`Endpoint: POST http://localhost:8000/api/v1/users/login/`
+`Endpoint: POST https://api.example.org/api/v1/users/login/`
   
   ``Request: [JSON Body]``
 

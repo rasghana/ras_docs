@@ -2,28 +2,13 @@
     "docs": [
         {
             "location": "/", 
-            "text": "Welcome to MkDocs\n\n\nFor full documentation visit \nmkdocs.org\n.\nWelcome to Ras Event app. visit \nras.com\n for more information on the app\n\n\nCommands\n\n\n\n\nmkdocs new [dir-name]\n - Create a new project.\n\n\nmkdocs serve\n - Start the live-reloading docs server.\n\n\nmkdocs build\n - Build the documentation site.\n\n\nmkdocs help\n - Print this help message.\n\n\n\n\nProject layout\n\n\nmkdocs.yml    # The configuration file.\ndocs/\n    index.md  # The documentation homepage.\n    ...       # Other markdown pages, images and other files.\n\n\n\nAccount Registration", 
+            "text": "Welcome to Ras api documentation\n\n\nWelcome to Ras Event app. visit \nrasghana.com\n for more information on the app", 
             "title": "Home"
         }, 
         {
-            "location": "/#welcome-to-mkdocs", 
-            "text": "For full documentation visit  mkdocs.org .\nWelcome to Ras Event app. visit  ras.com  for more information on the app", 
-            "title": "Welcome to MkDocs"
-        }, 
-        {
-            "location": "/#commands", 
-            "text": "mkdocs new [dir-name]  - Create a new project.  mkdocs serve  - Start the live-reloading docs server.  mkdocs build  - Build the documentation site.  mkdocs help  - Print this help message.", 
-            "title": "Commands"
-        }, 
-        {
-            "location": "/#project-layout", 
-            "text": "mkdocs.yml    # The configuration file.\ndocs/\n    index.md  # The documentation homepage.\n    ...       # Other markdown pages, images and other files.", 
-            "title": "Project layout"
-        }, 
-        {
-            "location": "/#account-registration", 
-            "text": "", 
-            "title": "Account Registration"
+            "location": "/#welcome-to-ras-api-documentation", 
+            "text": "Welcome to Ras Event app. visit  rasghana.com  for more information on the app", 
+            "title": "Welcome to Ras api documentation"
         }, 
         {
             "location": "/account_registration/", 
@@ -47,7 +32,7 @@
         }, 
         {
             "location": "/event_registry/", 
-            "text": "Register for one event\n\n\nEndpoint: GET http://localhost:8000/api/v1/events/register-for-event/\n\n\nResponse: 201 Created\n\n\n{\n  \"id\": 11,\n  \"event\": {\n    \"id\": 2,\n    \"event_name\": \"Event 2\",\n    \"venue\": \"Palace\",\n    \"price\": 500,\n    \"description\": \"second event\",\n    \"created_date\": \"2017-02-14T14:47:12.191711Z\",\n    \"modified_date\": \"2017-02-14T14:47:12.191734Z\"\n  },\n  \"user\": 1,\n  \"unique_id\": \"BDD1535\",\n  \"payment_status\": \"paid\",\n  \"author\": 1,\n  \"created_date\": \"2017-02-16\",\n  \"modified_date\": \"2017-02-16\"\n}\n\n\n\nGet only events i have registered for\n\n\nEndpoint: GET http://localhost:8000/api/v1/event/my-events/\n\n\nResponse: 200 ok\n\n\n[\n  {\n    \"id\": 1,\n    \"event_name\": \"New Event\",\n    \"venue\": \"Haatso\",\n    \"price\": 200,\n    \"description\": \"This is a brief description about the event\",\n    \"created_date\": \"2017-02-14T12:39:58.407554Z\",\n    \"modified_date\": \"2017-02-14T12:39:58.407577Z\"\n  },\n  {\n    \"id\": 2,\n    \"event_name\": \"Event 2\",\n    \"venue\": \"Palace\",\n    \"price\": 500,\n    \"description\": \"second event\",\n    \"created_date\": \"2017-02-14T14:47:12.191711Z\",\n    \"modified_date\": \"2017-02-14T14:47:12.191734Z\"\n  }\n]", 
+            "text": "Register for one event\n\n\nEndpoint: GET http://localhost:8000/api/v1/events/{pk}/register-for-event/\n\n\nResponse: 201 Created\n\n\n{\n  \"id\": 11,\n  \"event\": {\n    \"id\": 2,\n    \"event_name\": \"Event 2\",\n    \"venue\": \"Palace\",\n    \"price\": 500,\n    \"description\": \"second event\",\n    \"created_date\": \"2017-02-14T14:47:12.191711Z\",\n    \"modified_date\": \"2017-02-14T14:47:12.191734Z\"\n  },\n  \"user\": 1,\n  \"unique_id\": \"BDD1535\",\n  \"payment_status\": \"paid\",\n  \"author\": 1,\n  \"created_date\": \"2017-02-16\",\n  \"modified_date\": \"2017-02-16\"\n}\n\n\n\nGet only events i have registered for\n\n\nEndpoint: GET http://localhost:8000/api/v1/events/my-events/\n\n\nResponse: 200 ok\n\n\n[\n  {\n    \"id\": 1,\n    \"event_name\": \"New Event\",\n    \"venue\": \"Haatso\",\n    \"price\": 200,\n    \"description\": \"This is a brief description about the event\",\n    \"created_date\": \"2017-02-14T12:39:58.407554Z\",\n    \"modified_date\": \"2017-02-14T12:39:58.407577Z\"\n  },\n  {\n    \"id\": 2,\n    \"event_name\": \"Event 2\",\n    \"venue\": \"Palace\",\n    \"price\": 500,\n    \"description\": \"second event\",\n    \"created_date\": \"2017-02-14T14:47:12.191711Z\",\n    \"modified_date\": \"2017-02-14T14:47:12.191734Z\"\n  }\n]", 
             "title": "Event_registry"
         }, 
         {

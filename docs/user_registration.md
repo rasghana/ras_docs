@@ -1,6 +1,6 @@
 ### Allows users to register
 
-`Endpoint: POST http://localhost:8000/api/v1/registration/create-registration/`
+`Endpoint: POST https://api.example.org/api/v1/registration/create-registration/`
 
   ``Request: [JSON Body]``
 
@@ -27,7 +27,7 @@
     }
 
 ### Get all registered users
-`Endpoint: GET http://localhost:8000/api/v1/registration/`
+`Endpoint: GET https://api.example.org/api/v1/registration/`
 
   `Response: 200`
 
@@ -60,7 +60,7 @@
     ]
 
 ### Edit registered user
-`Endpoint: POST http://localhost:8000/api/v1/registration/{pk}/edit-registered-user/`
+`Endpoint: POST https://api.example.org/api/v1/registration/{pk}/edit-registered-user/`
   
   ``Request: [JSON Body]``
   

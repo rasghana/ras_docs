@@ -1,6 +1,6 @@
 ### News
 
-`Endpoint: GET http://localhost:8000/api/v1/news/`
+`Endpoint: GET https://api.example.org/api/v1/news/`
 
   ``Response: 200 ok``
 
