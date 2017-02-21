@@ -137,7 +137,7 @@
             <div class="section">
               
                 <h3 id="allows-users-to-register">Allows users to register</h3>
-<p><code>Endpoint: POST http://localhost:8000/api/v1/registration/create-registration/</code></p>
+<p><code>Endpoint: POST https://api.example.org/api/v1/registration/create-registration/</code></p>
 <p><code>Request: [JSON Body]</code></p>
 <pre><code>{
   "first_name": "Kelvin",
@@ -161,7 +161,7 @@
 }
 </code></pre>
 <h3 id="get-all-registered-users">Get all registered users</h3>
-<p><code>Endpoint: GET http://localhost:8000/api/v1/registration/</code></p>
+<p><code>Endpoint: GET https://api.example.org/api/v1/registration/</code></p>
 <p><code>Response: 200</code></p>
 <pre><code> [
   {
@@ -192,7 +192,7 @@
 ]
 </code></pre>
 <h3 id="edit-registered-user">Edit registered user</h3>
-<p><code>Endpoint: POST http://localhost:8000/api/v1/registration/{pk}/edit-registered-user/</code></p>
+<p><code>Endpoint: POST https://api.example.org/api/v1/registration/{pk}/edit-registered-user/</code></p>
 <p><code>Request: [JSON Body]</code></p>
 <pre><code>  {
     "first_name": "Kelvin",
