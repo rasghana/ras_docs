@@ -134,8 +134,30 @@
             <div class="section">
               
                 <h3 id="register-for-one-event">Register for one event</h3>
-<p><code>Endpoint: GET https://api.example.org/api/v1/events/{pk}/register-for-event/</code></p>
-<p><code>Response: 201 Created</code></p>
+<p>This enpoint allow users who have made payment to register for an event.</p>
+<ul>
+<li>
+<p>Method: <code>POST</code></p>
+</li>
+<li>
+<p>Endpoint: <code>https://api.example.org/api/v1/events/{pk}/register-for-event/</code></p>
+</li>
+<li>
+<p>User Authorization: <code>Required</code> </p>
+<pre><code>  "Authorization": "Token xxxxxxxxxxxxx"
+</code></pre>
+</li>
+<li>
+<p>Request: <code>[JSON Body]</code></p>
+<pre><code>{
+"event": "event",
+"user": "user",
+"payment_status": "paid"
+}
+</code></pre>
+</li>
+<li>
+<p>Response: <code>201 Created</code></p>
 <pre><code>{
   "id": 11,
   "event": {
@@ -155,9 +177,24 @@
   "modified_date": "2017-02-16"
 }
 </code></pre>
+</li>
+</ul>
 <h3 id="get-only-events-i-have-registered-for">Get only events i have registered for</h3>
-<p><code>Endpoint: GET https://api.example.org/api/v1/events/my-events/</code></p>
-<p><code>Response: 200 ok</code></p>
+<p>Allows a user to get access to all the events he has registered for.</p>
+<ul>
+<li>
+<p>Method: <code>GET</code></p>
+</li>
+<li>
+<p>Endpoint: <code>https://api.example.org/api/v1/events/my-events/</code></p>
+</li>
+<li>
+<p>User Authorization: <code>Required</code> </p>
+<pre><code>  "Authorization": "Token xxxxxxxxxxxxxxxx"
+</code></pre>
+</li>
+<li>
+<p>Response: <code>200 ok</code></p>
 <pre><code>[
   {
     "id": 1,
@@ -179,6 +216,8 @@
   }
 ]
 </code></pre>
+</li>
+</ul>
               
             </div>
           </div>

@@ -134,33 +134,55 @@
             <div class="section">
               
                 <h3 id="account-signup">Account signup</h3>
-<p><code>Endpoint: POST https://api.example.org/api/v1/users/signup/</code></p>
-<p><code>Request: [JSON Body]</code></p>
+<ul>
+<li>
+<p>Method: <code>POST</code></p>
+</li>
+<li>
+<p>Endpoint: <code>https://api.example.org/api/v1/users/signup/</code></p>
+</li>
+<li>
+<p>Request: <code>[JSON Body]</code></p>
 <pre><code>{
 "email": "user@user.com",
 "password": "xxxxxxxx"
 }
 </code></pre>
-<p><code>Response: 201 Created</code></p>
+</li>
+<li>
+<p>Response: <code>201 Created</code></p>
 <pre><code>{
 "email": "user@user.com",
-"token": "xxxxxxxxxxxxxxxxxx"
+"auth_token": "xxxxxxxxxxxxxxxxxxxxxx"
 }
 </code></pre>
+</li>
+</ul>
 <h3 id="account-login">Account login</h3>
-<p><code>Endpoint: POST https://api.example.org/api/v1/users/login/</code></p>
-<p><code>Request: [JSON Body]</code></p>
+<ul>
+<li>
+<p>Method: <code>POST</code></p>
+</li>
+<li>
+<p>Endpoint: <code>https://api.example.org/api/v1/users/login/</code></p>
+</li>
+<li>
+<p>Request: <code>[JSON Body]</code></p>
 <pre><code>{
 "email": "user@user.com",
 "password": "xxxxxxxx"
 }
 </code></pre>
-<p><code>Response: 201 Created</code></p>
+</li>
+<li>
+<p>Response: <code>201 Created</code></p>
 <pre><code>{
 "email": "user@user.com",
-"token": "xxxxxxxxxxxxxxxxxx"
+"auth_token": "xxxxxxxxxxxxxxxxxxxxx"
 }
 </code></pre>
+</li>
+</ul>
               
             </div>
           </div>
