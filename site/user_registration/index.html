@@ -137,8 +137,20 @@
             <div class="section">
               
                 <h3 id="allows-users-to-register">Allows users to register</h3>
-<p><code>Endpoint: POST https://api.example.org/api/v1/registration/create-registration/</code></p>
-<p><code>Request: [JSON Body]</code></p>
+<ul>
+<li>
+<p>Method: <code>POST</code></p>
+</li>
+<li>
+<p>Endpoint: <code>https://api.example.org/api/v1/registration/create-registration/</code></p>
+</li>
+<li>
+<p>User Authorization: <code>Required</code> </p>
+<pre><code>  "Authorization": "Token xxxxxxxxxxxxxxxxxx"
+</code></pre>
+</li>
+<li>
+<p>Request: <code>[JSON Body]</code></p>
 <pre><code>{
   "first_name": "Kelvin",
   "middle_name": "Tetteh",
@@ -146,10 +158,11 @@
   "wassce_id_number": 1234568,
   "date_of_birth": "2017-02-10",
   "phone_number": 546424340,
-
 }
 </code></pre>
-<p><code>Response: 201</code></p>
+</li>
+<li>
+<p>Response: <code>201 Created</code></p>
 <pre><code> {
   "first_name": "Kelvin",
   "middle_name": "Tetteh",
@@ -157,12 +170,28 @@
   "wassce_id_number": 1234568,
   "date_of_birth": "2017-02-10",
   "phone_number": 546424340,
-  "user": "token"
+  "published_date": null,
+  "created_date": "2017-02-27T19:49:14.212813Z",
+  "modified": "2017-02-27T19:49:14.212846Z"
 }
 </code></pre>
+</li>
+</ul>
 <h3 id="get-all-registered-users">Get all registered users</h3>
-<p><code>Endpoint: GET https://api.example.org/api/v1/registration/</code></p>
-<p><code>Response: 200</code></p>
+<ul>
+<li>
+<p>Method: <code>GET</code></p>
+</li>
+<li>
+<p>Endpoint: <code>https://api.example.org/api/v1/registration/</code></p>
+</li>
+<li>
+<p>User Authorization: <code>Required</code> </p>
+<pre><code>  "Authorization": "Token xxxxxxxxxxxxxxxxxx"
+</code></pre>
+</li>
+<li>
+<p>Response: <code>200 Ok</code></p>
 <pre><code> [
   {
     "id": 3,
@@ -176,7 +205,6 @@
     "created_date": "2017-02-10T22:07:12.709201Z",
     "modified": "2017-02-12T19:11:35.028970Z"
   },
-
   {
     "id": 4,
     "first_name": "Kelvin",
@@ -191,9 +219,23 @@
   }
 ]
 </code></pre>
+</li>
+</ul>
 <h3 id="edit-registered-user">Edit registered user</h3>
-<p><code>Endpoint: POST https://api.example.org/api/v1/registration/{pk}/edit-registered-user/</code></p>
-<p><code>Request: [JSON Body]</code></p>
+<ul>
+<li>
+<p>Method: <code>POST</code></p>
+</li>
+<li>
+<p>Endpoint: <code>https://api.example.org/api/v1/registration/{pk}/edit-registered-user/</code></p>
+</li>
+<li>
+<p>User Authorization: <code>Required</code> </p>
+<pre><code>  "Authorization": "Token xxxxxxxxxxxxxxxxxx"
+</code></pre>
+</li>
+<li>
+<p>Request: <code>[JSON Body]</code></p>
 <pre><code>  {
     "first_name": "Kelvin",
     "middle_name": "Tetteh",
@@ -202,16 +244,25 @@
     "date_of_birth": "2017-02-10",
     "phone_number": 546424340,
   }
-  Response: 201
-   {
+</code></pre>
+</li>
+<li>
+<p>Response: <code>201 Created</code></p>
+<pre><code>   {
+    "id": 4,
     "first_name": "Kelvin",
     "middle_name": "Tetteh",
     "last_name": "Anyinatoe",
     "wassce_id_number": 1234568,
     "date_of_birth": "2017-02-10",
     "phone_number": 546424340,
-  }
+    "published_date": null,
+    "created_date": "2017-02-12T22:37:50.108941Z",
+    "modified": "2017-02-12T23:21:54.409830Z"
+   }
 </code></pre>
+</li>
+</ul>
               
             </div>
           </div>
