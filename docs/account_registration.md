@@ -12,7 +12,7 @@
         }
       
   - Response: ``201 Created``
-  
+
         {
           "status_code": 201,
           "message": "you have successfully signed up on Ras",
@@ -22,6 +22,23 @@
           }
         }
 
+  - Error Response ``401 UNAUTHORIZED``
+
+    - Invalid email error
+
+            {
+            "status_code": 401,
+            "message": "please enter a valid email address",
+            }
+
+   - Error Response ``401 UNAUTHORIZED``
+
+    - Email already exist
+
+            {
+            "status_code": 401,
+            "message": "email already exist, please use different email"
+            }
 
 ### Account login
 
@@ -46,3 +63,21 @@
           "auth_token": "xxxxxxxxxxxxxxxxxxxxxxxxxxx"
           }
         }
+
+- Error Response ``404 NOT FOUND``
+
+    - Account deactivated
+
+            {
+            "status_code": 404,
+             "message": "This account has been deactivated"
+            }
+
+- Error Response ``400 BAD REQUEST``
+
+    - Invalid username or password
+
+            {
+            "status_code": 400,
+             "message": "Invalid username or password"
+            }

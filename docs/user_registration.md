@@ -21,17 +21,31 @@
 
   - Response: `201 Created`
 
-         {
-          "first_name": "Kelvin",
-          "middle_name": "Tetteh",
-          "last_name": "Anyinatoe",
-          "wassce_id_number": 1234568,
-          "date_of_birth": "2017-02-10",
-          "phone_number": 546424340,
-          "published_date": null,
-          "created_date": "2017-02-27T19:49:14.212813Z",
-          "modified": "2017-02-27T19:49:14.212846Z"
+        {
+          "status_code": 201,
+          "message": "you have successfully registered",
+          "result": {
+            "id": 3,
+            "first_name": "Kelvin",
+            "middle_name": "Tetteh",
+            "last_name": "Anyinatoe",
+            "wassce_id_number": 1234568,
+            "date_of_birth": "2017-02-10",
+            "phone_number": 546424340,
+            "published_date": null,
+            "created_date": "2017-03-07T18:11:30.550939Z",
+            "modified": "2017-03-07T18:11:30.550969Z"
+          }
         }
+
+  - Error Response ``401 UNAUTHORIZED``
+
+    - User not logged in
+
+             {
+              "status_code": 401,
+              "message": "Operation failed, make sure you are logged in"
+              }
 
 ### Get all registered users
 
@@ -96,7 +110,10 @@
   - Response: `201 Created`
 
            {
-            "id": 4,
+          "status_code": 201,
+          "message": "You have updated your credentials",
+          "result": {
+            "id": 3,
             "first_name": "Kelvin",
             "middle_name": "Tetteh",
             "last_name": "Anyinatoe",
@@ -104,6 +121,15 @@
             "date_of_birth": "2017-02-10",
             "phone_number": 546424340,
             "published_date": null,
-            "created_date": "2017-02-12T22:37:50.108941Z",
-            "modified": "2017-02-12T23:21:54.409830Z"
-           }
+            "created_date": "2017-03-07T18:11:30.550939Z",
+            "modified": "2017-03-07T18:11:30.550969Z"
+          }
+        }
+
+- Error Response ``403 FORBIDDEN``
+
+    - updating user registration data failed
+
+             {"status_code": 403,
+              "message": "Updating user registration failed"
+             }
