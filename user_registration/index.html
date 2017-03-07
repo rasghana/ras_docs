@@ -163,18 +163,34 @@
 </li>
 <li>
 <p>Response: <code>201 Created</code></p>
-<pre><code> {
-  "first_name": "Kelvin",
-  "middle_name": "Tetteh",
-  "last_name": "Anyinatoe",
-  "wassce_id_number": 1234568,
-  "date_of_birth": "2017-02-10",
-  "phone_number": 546424340,
-  "published_date": null,
-  "created_date": "2017-02-27T19:49:14.212813Z",
-  "modified": "2017-02-27T19:49:14.212846Z"
+<pre><code>{
+  "status_code": 201,
+  "message": "you have successfully registered",
+  "result": {
+    "id": 3,
+    "first_name": "Kelvin",
+    "middle_name": "Tetteh",
+    "last_name": "Anyinatoe",
+    "wassce_id_number": 1234568,
+    "date_of_birth": "2017-02-10",
+    "phone_number": 546424340,
+    "published_date": null,
+    "created_date": "2017-03-07T18:11:30.550939Z",
+    "modified": "2017-03-07T18:11:30.550969Z"
+  }
 }
 </code></pre>
+</li>
+<li>
+<p>Error Response <code>401 UNAUTHORIZED</code></p>
+<ul>
+<li>User not logged in<pre><code> {
+  "status_code": 401,
+  "message": "Operation failed, make sure you are logged in"
+  }
+</code></pre>
+</li>
+</ul>
 </li>
 </ul>
 <h3 id="get-all-registered-users">Get all registered users</h3>
@@ -249,7 +265,10 @@
 <li>
 <p>Response: <code>201 Created</code></p>
 <pre><code>   {
-    "id": 4,
+  "status_code": 201,
+  "message": "You have updated your credentials",
+  "result": {
+    "id": 3,
     "first_name": "Kelvin",
     "middle_name": "Tetteh",
     "last_name": "Anyinatoe",
@@ -257,10 +276,21 @@
     "date_of_birth": "2017-02-10",
     "phone_number": 546424340,
     "published_date": null,
-    "created_date": "2017-02-12T22:37:50.108941Z",
-    "modified": "2017-02-12T23:21:54.409830Z"
-   }
+    "created_date": "2017-03-07T18:11:30.550939Z",
+    "modified": "2017-03-07T18:11:30.550969Z"
+  }
+}
 </code></pre>
+</li>
+<li>
+<p>Error Response <code>403 FORBIDDEN</code></p>
+<ul>
+<li>updating user registration data failed<pre><code> {"status_code": 403,
+  "message": "Updating user registration failed"
+ }
+</code></pre>
+</li>
+</ul>
 </li>
 </ul>
               

@@ -140,43 +140,70 @@
 <p>Method: <code>POST</code></p>
 </li>
 <li>
-<p>Endpoint: <code>https://api.example.org/api/v1/events/{pk}/register-for-event/</code></p>
+<p>Endpoint: <code>https://api.example.org/api/v1/events/{eventid}/register-for-event/</code></p>
 </li>
 <li>
 <p>User Authorization: <code>Required</code> </p>
-<pre><code>  "Authorization": "Token xxxxxxxxxxxxx"
+<pre><code>  "Authorization": "Token xxxxxxxxxxxxxxxxxxxxx"
 </code></pre>
 </li>
 <li>
 <p>Request: <code>[JSON Body]</code></p>
-<pre><code>{
-"event": "event",
-"user": "user",
+<ul>
+<li>Note: Provide event id in the url <code>{eventid}</code>,  user must be logged in with token and payment status must be provided in <code>JSON Body</code><pre><code>{
 "payment_status": "paid"
 }
 </code></pre>
 </li>
+</ul>
+</li>
 <li>
 <p>Response: <code>201 Created</code></p>
-<pre><code>  {
-    "id": 11,
+<pre><code>{
+  "status_code": 201,
+  "message": "you have successfully registered for an event",
+  "result": {
+    "id": 13,
     "event": {
-      "id": 2,
-      "event_name": "Event 2",
-      "venue": "Palace",
-      "price": 500,
-      "description": "second event",
-      "created_date": "2017-02-14T14:47:12.191711Z",
-      "modified_date": "2017-02-14T14:47:12.191734Z"
+    "id": 2,
+    "event_name": "Event 2",
+    "venue": "Palace",
+    "price": 500,
+    "description": "second event",
+    "created_date": "2017-02-14T14:47:12.191711Z",
+    "modified_date": "2017-02-14T14:47:12.191734Z"
     },
     "user": 1,
-    "unique_id": "BDD1535",
+    "unique_id": "278E1A5",
     "payment_status": "paid",
     "author": 1,
-    "created_date": "2017-02-16",
-    "modified_date": "2017-02-16"
+    "created_date": "2017-03-07",
+    "modified_date": "2017-03-07"
+  }
+}
+</code></pre>
+</li>
+<li>
+<p>Error Response <code>401 UNAUTHORIZED</code></p>
+<ul>
+<li>Already registered for that same event<pre><code>  {
+    "status_code": 401,
+    "message": "You have already registered for this event"
+   }
+</code></pre>
+</li>
+</ul>
+</li>
+<li>
+<p>Error Response <code>400 BAD REQUEST</code></p>
+<ul>
+<li>User payment status is not paid<pre><code>  {
+    "status_code": 400,
+    "message": "Unsuccessful event registration, check your payment status"
   }
 </code></pre>
+</li>
+</ul>
 </li>
 </ul>
 <h3 id="get-only-events-i-have-registered-for">Get only events i have registered for</h3>
@@ -190,7 +217,7 @@
 </li>
 <li>
 <p>User Authorization: <code>Required</code> </p>
-<pre><code>  "Authorization": "Token xxxxxxxxxxxxxxxx"
+<pre><code>  "Authorization": "Token xxxxxxxxxxxxxxxxxxxx"
 </code></pre>
 </li>
 <li>
