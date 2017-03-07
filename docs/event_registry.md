@@ -19,24 +19,24 @@ This enpoint allow users who have made payment to register for an event.
 
  - Response: ``201 Created``
 
-        {
-          "id": 11,
-          "event": {
-            "id": 2,
-            "event_name": "Event 2",
-            "venue": "Palace",
-            "price": 500,
-            "description": "second event",
-            "created_date": "2017-02-14T14:47:12.191711Z",
-            "modified_date": "2017-02-14T14:47:12.191734Z"
-          },
-          "user": 1,
-          "unique_id": "BDD1535",
-          "payment_status": "paid",
-          "author": 1,
-          "created_date": "2017-02-16",
-          "modified_date": "2017-02-16"
-        }
+          {
+            "id": 11,
+            "event": {
+              "id": 2,
+              "event_name": "Event 2",
+              "venue": "Palace",
+              "price": 500,
+              "description": "second event",
+              "created_date": "2017-02-14T14:47:12.191711Z",
+              "modified_date": "2017-02-14T14:47:12.191734Z"
+            },
+            "user": 1,
+            "unique_id": "BDD1535",
+            "payment_status": "paid",
+            "author": 1,
+            "created_date": "2017-02-16",
+            "modified_date": "2017-02-16"
+          }
 
 
 ### Get only events i have registered for

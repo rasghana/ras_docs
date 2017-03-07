@@ -12,10 +12,14 @@
         }
       
   - Response: ``201 Created``
-
+  
         {
-        "email": "user@user.com",
-        "auth_token": "xxxxxxxxxxxxxxxxxxxxxx"
+          "status_code": 201,
+          "message": "you have successfully signed up on Ras",
+          "result": {
+            "email": "user@user.com",
+            "auth_token": "xxxxxxxxxxxxxxxxxxxxxx"
+          }
         }
 
 
@@ -35,6 +39,10 @@
   - Response: ``201 Created``
 
         {
-        "email": "user@user.com",
-        "auth_token": "xxxxxxxxxxxxxxxxxxxxx"
+        "status_code": 200,
+        "message": "you have successfully logged in",
+        "result": {
+          "email": "kk@kk.com",
+          "auth_token": "xxxxxxxxxxxxxxxxxxxxxxxxxxx"
+          }
         }
