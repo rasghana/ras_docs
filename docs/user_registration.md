@@ -40,11 +40,11 @@
 
   - Error Response ``401 UNAUTHORIZED``
 
-    - User not logged in
+    - User alread exist.
 
              {
               "status_code": 401,
-              "message": "Operation failed, make sure you are logged in"
+              "message": "You have already registered"
               }
 
 ### Get all registered users
