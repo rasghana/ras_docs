@@ -14,9 +14,9 @@
           "first_name": "Kelvin",
           "middle_name": "Tetteh",
           "last_name": "Anyinatoe",
-          "wassce_id_number": 1234568,
+          "wassce_id_number": "1234568",
           "date_of_birth": "2017-02-10",
-          "phone_number": 546424340,
+          "phone_number": "546424340",
         }
 
   - Response: `201 Created`
@@ -29,9 +29,9 @@
             "first_name": "Kelvin",
             "middle_name": "Tetteh",
             "last_name": "Anyinatoe",
-            "wassce_id_number": 1234568,
+            "wassce_id_number": "1234568",
             "date_of_birth": "2017-02-10",
-            "phone_number": 546424340,
+            "phone_number": "546424340",
             "published_date": null,
             "created_date": "2017-03-07T18:11:30.550939Z",
             "modified": "2017-03-07T18:11:30.550969Z"
@@ -65,9 +65,9 @@
             "first_name": "Kennedy",
             "middle_name": "Martey",
             "last_name": "Anyinatoe",
-            "wassce_id_number": 1233455,
+            "wassce_id_number": "1233455",
             "date_of_birth": "2017-02-10",
-            "phone_number": 246424340,
+            "phone_number": "246424340",
             "published_date": null,
             "created_date": "2017-02-10T22:07:12.709201Z",
             "modified": "2017-02-12T19:11:35.028970Z"
@@ -77,14 +77,43 @@
             "first_name": "Kelvin",
             "middle_name": "Tetteh",
             "last_name": "Anyinatoe",
-            "wassce_id_number": 1234568,
+            "wassce_id_number": "1234568",
             "date_of_birth": "2017-02-10",
-            "phone_number": 546424340,
+            "phone_number": "546424340",
             "published_date": null,
             "created_date": "2017-02-12T22:37:50.108941Z",
             "modified": "2017-02-12T23:21:54.409830Z"
           }
         ]
+
+### Get a single registration
+
+- Method: `GET`
+
+- Endpoint: `https://api.example.org/api/v1/registration/{registration_id}/`
+
+- User Authorization: ``Required`` 
+
+          "Authorization": "Token xxxxxxxxxxxxxxxxxx"
+
+  - Response: `200 Ok`
+
+         [
+          {
+            "id": 3,
+            "first_name": "Kennedy",
+            "middle_name": "Martey",
+            "last_name": "Anyinatoe",
+            "wassce_id_number": "1233455",
+            "date_of_birth": "2017-02-10",
+            "phone_number": "246424340",
+            "published_date": null,
+            "created_date": "2017-02-10T22:07:12.709201Z",
+            "modified": "2017-02-12T19:11:35.028970Z"
+          }
+        ]
+
+
 
 ### Edit registered user
 

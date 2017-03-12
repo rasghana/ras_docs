@@ -104,3 +104,33 @@
             {
             "detail": "Authentication credentials were not provided."
             }
+
+
+### Logout a user
+
+- Method: ``POST``
+
+- Endpoint: `https://api.example.org/api/v1/users/{userid}/logout/`
+
+    - Authorization: ``Token xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx``
+
+        - Response: ``200 OK``
+
+                {
+                "status_code": 200,
+                "message": "You have been successfully logged out"
+                }
+
+       - Note: The token expires and and new one is genenrated for new login session.
+
+
+- Error Response ``401 UNAUTHORIZED``
+
+When a user is logged out for the first time, the token expires and a new one is generated. When you hit the endpoint agian with the previous token, You get Invalide token error
+
+  - Invalid Token
+
+        {
+        "message": "Invalid Token"
+        }
+
