@@ -68,6 +68,9 @@
                 <li class="toctree-l3"><a href="#account-login">Account login</a></li>
                 
             
+                <li class="toctree-l3"><a href="#retrieve-a-logged-in-user">Retrieve a logged in user</a></li>
+                
+            
             </ul>
         
     </li>
@@ -229,6 +232,34 @@
 <li>Invalid username or password<pre><code>{
 "status_code": 400,
  "message": "Invalid username or password"
+}
+</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="retrieve-a-logged-in-user">Retrieve a logged in user</h3>
+<ul>
+<li>
+<p>Method: <code>GET</code></p>
+</li>
+<li>
+<p>Endpoint: <code>https://api.example.org/api/v1/users/{userid}/</code></p>
+<ul>
+<li>Authorization: <code>Token xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</code><pre><code>{
+"id": 1,
+"email": "xxxxxx@xxxxxxx.com",
+"auth_token": "xxxxxxxxxxxxxxxxxxxxxxxxxx"
+}
+</code></pre>
+</li>
+</ul>
+</li>
+<li>
+<p>Error Response <code>401 UNAUTHORIZED</code></p>
+<ul>
+<li>Please provide Token<pre><code>{
+"detail": "Authentication credentials were not provided."
 }
 </code></pre>
 </li>
