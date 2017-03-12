@@ -78,6 +78,9 @@
                 <li class="toctree-l3"><a href="#get-a-single-registration">Get a single registration</a></li>
                 
             
+                <li class="toctree-l3"><a href="#get-logged-in-user-registration-details-only">Get logged in user registration details only</a></li>
+                
+            
                 <li class="toctree-l3"><a href="#edit-registered-user">Edit registered user</a></li>
                 
             
@@ -247,6 +250,38 @@
 </li>
 <li>
 <p>Endpoint: <code>https://api.example.org/api/v1/registration/{registration_id}/</code></p>
+</li>
+<li>
+<p>User Authorization: <code>Required</code> </p>
+<pre><code>  "Authorization": "Token xxxxxxxxxxxxxxxxxx"
+</code></pre>
+</li>
+<li>
+<p>Response: <code>200 Ok</code></p>
+<pre><code> [
+  {
+    "id": 3,
+    "first_name": "Kennedy",
+    "middle_name": "Martey",
+    "last_name": "Anyinatoe",
+    "wassce_id_number": "1233455",
+    "date_of_birth": "2017-02-10",
+    "phone_number": "246424340",
+    "published_date": null,
+    "created_date": "2017-02-10T22:07:12.709201Z",
+    "modified": "2017-02-12T19:11:35.028970Z"
+  }
+]
+</code></pre>
+</li>
+</ul>
+<h3 id="get-logged-in-user-registration-details-only">Get logged in user registration details only</h3>
+<ul>
+<li>
+<p>Method: <code>GET</code></p>
+</li>
+<li>
+<p>Endpoint: <code>https://api.example.org/api/v1/registration/my-registration-details/</code></p>
 </li>
 <li>
 <p>User Authorization: <code>Required</code> </p>
