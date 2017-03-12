@@ -71,6 +71,9 @@
                 <li class="toctree-l3"><a href="#retrieve-a-logged-in-user">Retrieve a logged in user</a></li>
                 
             
+                <li class="toctree-l3"><a href="#logout-a-user">Logout a user</a></li>
+                
+            
             </ul>
         
     </li>
@@ -264,6 +267,42 @@
 </code></pre>
 </li>
 </ul>
+</li>
+</ul>
+<h3 id="logout-a-user">Logout a user</h3>
+<ul>
+<li>
+<p>Method: <code>POST</code></p>
+</li>
+<li>
+<p>Endpoint: <code>https://api.example.org/api/v1/users/{userid}/logout/</code></p>
+<ul>
+<li>
+<p>Authorization: <code>Token xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</code></p>
+<ul>
+<li>Response: <code>200 OK</code><pre><code>{
+"status_code": 200,
+"message": "You have been successfully logged out"
+}
+</code></pre>
+</li>
+</ul>
+</li>
+<li>
+<p>Note: The token expires and and new one is genenrated for new login session.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Error Response <code>401 UNAUTHORIZED</code></p>
+</li>
+</ul>
+<p>When a user is logged out for the first time, the token expires and a new one is generated. When you hit the endpoint agian with the previous token, You get Invalide token error</p>
+<ul>
+<li>Invalid Token<pre><code>{
+"message": "Invalid Token"
+}
+</code></pre>
 </li>
 </ul>
               
