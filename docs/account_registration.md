@@ -81,3 +81,26 @@
             "status_code": 400,
              "message": "Invalid username or password"
             }
+
+
+### Retrieve a logged in user
+
+- Method: ``GET``
+
+- Endpoint: `https://api.example.org/api/v1/users/{userid}/`
+
+    - Authorization: ``Token xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx``
+
+            {
+            "id": 1,
+            "email": "xxxxxx@xxxxxxx.com",
+            "auth_token": "xxxxxxxxxxxxxxxxxxxxxxxxxx"
+            }
+
+- Error Response ``401 UNAUTHORIZED``
+
+    - Please provide Token
+
+            {
+            "detail": "Authentication credentials were not provided."
+            }
