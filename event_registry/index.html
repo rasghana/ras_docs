@@ -222,32 +222,50 @@
 </li>
 <li>
 <p>Response: <code>200 ok</code></p>
-<pre><code>{
-"status_code": 200,
-"message": "Events you have registered for",
-"result": [
-  {
-    "id": 1,
-    "event_name": "New Event",
-    "venue": "Haatso",
-    "price": 200,
-    "description": "This is a brief description about the event",
-    "event_date": "2017-03-28",
-    "created_date": "2017-02-14T12:39:58.407554Z",
-    "modified_date": "2017-03-11T03:50:53.581873Z"
-  },
-  {
-    "id": 2,
-    "event_name": "Event 2",
-    "venue": "Palace",
-    "price": 500,
-    "description": "second event",
-    "event_date": "2017-03-11",
-    "created_date": "2017-02-14T14:47:12.191711Z",
-    "modified_date": "2017-03-11T03:50:46.150171Z"
+<pre><code> {
+    "status_code": 200,
+    "message": "Events you have registered for",
+    "result": [
+      {
+        "id": 10,
+        "event": {
+          "id": 1,
+          "event_name": "New Event",
+          "venue": "Haatso",
+          "price": 200,
+          "description": "This is a brief description about the event",
+          "event_date": "2017-03-28",
+          "created_date": "2017-02-14T12:39:58.407554Z",
+          "modified_date": "2017-03-11T03:50:53.581873Z"
+        },
+        "user": 1,
+        "unique_id": "3402E81",
+        "payment_status": "paid",
+        "author": 1,
+        "created_date": "2017-02-16",
+        "modified_date": "2017-02-16"
+      },
+      {
+        "id": 16,
+        "event": {
+          "id": 2,
+          "event_name": "Event 2",
+          "venue": "Palace",
+          "price": 500,
+          "description": "second event",
+          "event_date": "2017-03-11",
+          "created_date": "2017-02-14T14:47:12.191711Z",
+          "modified_date": "2017-03-11T03:50:46.150171Z"
+        },
+        "user": 1,
+        "unique_id": "06C8461",
+        "payment_status": "paid",
+        "author": 1,
+        "created_date": "2017-03-07",
+        "modified_date": "2017-03-07"
+      }
+    ]
   }
-  ]
-}
 </code></pre>
 </li>
 </ul>
