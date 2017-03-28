@@ -81,9 +81,6 @@
                 <li class="toctree-l3"><a href="#get-logged-in-user-registration-details-only">Get logged in user registration details only</a></li>
                 
             
-                <li class="toctree-l3"><a href="#edit-registered-user">Edit registered user</a></li>
-                
-            
             </ul>
         
     </li>
@@ -146,6 +143,9 @@
 <ul>
 <li>
 <p>Method: <code>POST</code></p>
+<ul>
+<li>Note: This endpoint creats a RAS registration for first time users and also edits for subsequent users. When the registration is created for the first time, the payment_status is "unpaid" untill payment is made then the registration payment status changes to "paid".</li>
+</ul>
 </li>
 <li>
 <p>Endpoint: <code>https://api.example.org/api/v1/registration/create-registration/</code></p>
@@ -180,6 +180,7 @@
     "wassce_id_number": "1234568",
     "date_of_birth": "2017-02-10",
     "phone_number": "546424340",
+    "ras_acct_payment_status": "unpaid",
     "published_date": null,
     "created_date": "2017-03-07T18:11:30.550939Z",
     "modified": "2017-03-07T18:11:30.550969Z"
@@ -305,62 +306,6 @@
   }
 ]
 </code></pre>
-</li>
-</ul>
-<h3 id="edit-registered-user">Edit registered user</h3>
-<ul>
-<li>
-<p>Method: <code>POST</code></p>
-</li>
-<li>
-<p>Endpoint: <code>https://api.example.org/api/v1/registration/edit-registered-user/</code></p>
-</li>
-<li>
-<p>User Authorization: <code>Required</code> </p>
-<pre><code>  "Authorization": "Token xxxxxxxxxxxxxxxxxx"
-</code></pre>
-</li>
-<li>
-<p>Request: <code>[JSON Body]</code></p>
-<pre><code>  {
-    "first_name": "Edit Name",
-    "middle_name": "edit middle",
-    "last_name": "edit last name",
-    "wassce_id_number": "100000",
-    "date_of_birth": "2017-02-10",
-    "phone_number": "0246424340"
-  }
-</code></pre>
-</li>
-<li>
-<p>Response: <code>201 Created</code></p>
-<pre><code>   {
-  "status_code": 201,
-  "message": "You have updated your credentials",
-  "result": {
-    "id": 3,
-    "first_name": "Kelvin",
-    "middle_name": "Tetteh",
-    "last_name": "Anyinatoe",
-    "wassce_id_number": 1234568,
-    "date_of_birth": "2017-02-10",
-    "phone_number": 546424340,
-    "published_date": null,
-    "created_date": "2017-03-07T18:11:30.550939Z",
-    "modified": "2017-03-07T18:11:30.550969Z"
-  }
-}
-</code></pre>
-</li>
-<li>
-<p>Error Response <code>403 FORBIDDEN</code></p>
-<ul>
-<li>updating user registration data failed<pre><code> {"status_code": 403,
-  "message": "Updating user registration failed"
- }
-</code></pre>
-</li>
-</ul>
 </li>
 </ul>
               
