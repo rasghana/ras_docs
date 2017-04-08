@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>News - Ras api documentation</title>
+  <title>Interpay Payment - Ras api documentation</title>
   
 
   <link rel="shortcut icon" href="../img/favicon.ico">
@@ -20,7 +20,7 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "News";
+    var mkdocs_page_name = "Interpay Payment";
   </script>
   
   <script src="../js/jquery-2.1.1.min.js"></script>
@@ -85,22 +85,25 @@
 <li>
           
             <li>
-    <li class="toctree-l1 current">
-        <a class="current" href="./">News</a>
-        
-            <ul>
-            
-                <li class="toctree-l3"><a href="#news">News</a></li>
-                
-            
-            </ul>
+    <li class="toctree-l1 ">
+        <a class="" href="../news/">News</a>
         
     </li>
 <li>
           
             <li>
-    <li class="toctree-l1 ">
-        <a class="" href="../interpay_payment/">Interpay Payment</a>
+    <li class="toctree-l1 current">
+        <a class="current" href="./">Interpay Payment</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#pay-for-ras-account">Pay for Ras account</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#pay-for-event">Pay for Event</a></li>
+                
+            
+            </ul>
         
     </li>
 <li>
@@ -127,7 +130,7 @@
     
       
     
-    <li>News</li>
+    <li>Interpay Payment</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -137,41 +140,110 @@
           <div role="main">
             <div class="section">
               
-                <h3 id="news">News</h3>
-<p>Gets all news on the platform</p>
+                <h3 id="pay-for-ras-account">Pay for Ras account</h3>
 <ul>
 <li>
-<p>Method: <code>GET</code></p>
+<p>Method: <code>POST</code></p>
 </li>
 <li>
-<p>Endpoint: <code>https://api.example.org/api/v1/news/</code></p>
+<p>Endpoint: <code>https://api.example.org/api/v1/registration/pay-for-ras-account/</code></p>
 </li>
 <li>
-<p>Response: <code>200 ok</code></p>
-<pre><code>[
-  {
-    "id": 1,
-    "title": "News On social media",
-    "description": "This is a some news about what is trending in Ghana.",
-    "created_date": "2017-02-16",
-    "modified_date": "2017-02-16"
-  },
-  {
-    "id": 2,
-    "title": "Second News",
-    "description": "This is a some news about what is trending in Ghana.",
-    "created_date": "2017-02-16",
-    "modified_date": "2017-02-16"
-  },
-  {
-    "id": 3,
-    "title": "My Joyonline news",
-    "description": "This is a some news about what is trending in Ghana.",
-    "created_date": "2017-02-16",
-    "modified_date": "2017-02-16"
-  }
-]
+<p>User Authorization: <code>Required</code> </p>
+<pre><code>  "Authorization": "Token xxxxxxxxxxxxxxxxxxxxx"
 </code></pre>
+</li>
+<li>
+<p>Request: <code>[JSON Body]</code></p>
+<ul>
+<li>Note: <code>"name": "full name", "mobile": "+2332xxxxxx2" and "Order_id": "payment id"</code> is gotten from Ras account registration details and Order_id is payment id.<pre><code> {
+     "name": "full name",
+     "mobile": "+2332xxxxxx2",
+     "Order_id": "payment id",
+     "currency": "GHS",
+     "Amount": "xxx",
+     "order_desc": "Ras account",
+     "return_url": "https://www.heroku.com/api/v1/payments/complete"
+ }
+</code></pre>
+</li>
+</ul>
+</li>
+<li>
+<p>Response </p>
+<ul>
+<li>Note: token is already encoded and attached to redirect_url. All you need to do is to ship it<pre><code> {
+   "payment": {
+     "id": 63,
+     "amount": "xxx",
+     "is_ras_account": true,
+     "event": null,
+     "payment_status": "ip",
+     "user": 1,
+     "status_message": "",
+     "transaction_no": "18273",
+     "token": "xxxxxxxxxxxxxxxx",
+     "created_date": "2017-04-08T18:18:48.855391Z",
+     "modified": "2017-04-08T18:18:49.326173Z"
+   },
+   "redirect_url": "https://test.interpayafrica.com/interapi/confirmpayment?Token=xxxxxxxxxxxxxxxxxxxxxx"
+ }
+</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="pay-for-event">Pay for Event</h3>
+<ul>
+<li>
+<p>Method: <code>POST</code></p>
+</li>
+<li>
+<p>Endpoint: `https://api.example.org/api/v1/events/{event id}/make-event-payment/</p>
+</li>
+<li>
+<p>User Authorization: <code>Required</code> </p>
+<pre><code>  "Authorization": "Token xxxxxxxxxxxxxxxxxxxxx"
+</code></pre>
+</li>
+<li>
+<p>Request: <code>[JSON Body]</code></p>
+<ul>
+<li>Note: <code>"name": "full name", "mobile": "+2332xxxxxx2" and "Order_id": "payment id"</code> is gotten from Ras registration details and Order_id is payment id.<pre><code> {
+     "name": "full name",
+     "mobile": "+2332xxxxxx2",
+     "Order_id": "payment id",
+     "currency": "GHS",
+     "Amount": "xxx",
+     "order_desc": "Ras account",
+     "return_url": "https://www.heroku.com/api/v1/payments/complete"
+ }
+</code></pre>
+</li>
+</ul>
+</li>
+<li>
+<p>Response </p>
+<ul>
+<li>Note: token is already encoded and attached to redirect_url. All you need to do is to ship it<pre><code>{
+  "payment": {
+    "id": 59,
+    "amount": "xxx",
+    "is_ras_account": false,
+    "event": 2,
+    "payment_status": "ip",
+    "user": 1,
+    "status_message": "",
+    "transaction_no": "18xx9",
+    "token": "fxxxxxxxxxxxxxxxxxxxxxxx",
+    "created_date": "2017-04-08T18:07:54.630529Z",
+    "modified": "2017-04-08T18:07:55.109788Z"
+  },
+  "redirect_url": "https://test.interpayafrica.com/interapi/confirmpayment?Token=fxxxxxxxxxxxxxxxxxxxxx"
+}
+</code></pre>
+</li>
+</ul>
 </li>
 </ul>
               
@@ -181,10 +253,8 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../interpay_payment/" class="btn btn-neutral float-right" title="Interpay Payment"/>Next <span class="icon icon-circle-arrow-right"></span></a>
       
-      
-        <a href="../event_registry/" class="btn btn-neutral" title="Event registry"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../news/" class="btn btn-neutral" title="News"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -210,10 +280,8 @@
     <span class="rst-current-version" data-toggle="rst-current-version">
       
       
-        <span><a href="../event_registry/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../news/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
-      
-        <span style="margin-left: 15px"><a href="../interpay_payment/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>
