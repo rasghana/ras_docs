@@ -205,23 +205,24 @@
 <li>
 <p>Response </p>
 <ul>
-<li>Note: token is already encoded and attached to redirect_url. All you need to do is to ship it. Once the paymet is completed, a call back url would sent from Interpay and the event would be automatically registered.
-        {
-          "payment": {
-            "id": 59,
-            "amount": "xxx",
-            "is_ras_account": false,
-            "event": 2,
-            "payment_status": "ip",
-            "user": 1,
-            "status_message": "",
-            "transaction_no": "18xx9",
-            "token": "fxxxxxxxxxxxxxxxxxxxxxxx",
-            "created_date": "2017-04-08T18:07:54.630529Z",
-            "modified": "2017-04-08T18:07:55.109788Z"
-          },
-          "redirect_url": "https://test.interpayafrica.com/interapi/confirmpayment?Token=fxxxxxxxxxxxxxxxxxxxxx"
-        }</li>
+<li>Note: token is already encoded and attached to redirect_url. All you need to do is to ship it. Once the paymet is completed, a call back url would sent from Interpay and the event would be automatically registered.<pre><code>{
+  "payment": {
+    "id": 59,
+    "amount": "xxx",
+    "is_ras_account": false,
+    "event": 2,
+    "payment_status": "ip",
+    "user": 1,
+    "status_message": "",
+    "transaction_no": "18xx9",
+    "token": "fxxxxxxxxxxxxxxxxxxxxxxx",
+    "created_date": "2017-04-08T18:07:54.630529Z",
+    "modified": "2017-04-08T18:07:55.109788Z"
+  },
+  "redirect_url": "https://test.interpayafrica.com/interapi/confirmpayment?Token=fxxxxxxxxxxxxxxxxxxxxx"
+}
+</code></pre>
+</li>
 </ul>
 </li>
 </ul>
